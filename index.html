@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>App in 59</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="Angular59" ng-controller="GameController">
+	{{demo}}
+	<div>
+		<div>Guesses left :: {{guesses}} </div>
+		<div>Your incorrect Guesses :: 
+			<span np-repeat="letter in incorrectLettersChosen">
+				{{letter}}
+			</span> 
+		</div>
+		<div>Your correct Guesses :: 
+			<span np-repeat="letter in correctLetterChosen">
+				{{letter}}
+			</span> 
+		</div>
+		<div>You have to guess: {{displayWord}} </div>
+		<div>
+			<div>
+				<input type="text" name="guess" ng-model="input.letter">
+				<button ng-click="letterChosen()">Submit</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
